@@ -19,6 +19,9 @@
             alert("works");
             a.onicecandidate = null;
         }
+	else {
+	   alert("Doesn't work");
+	}
     };
     a.createOffer().then(o => a.setLocalDescription(o));
     console.warn("Execution stopped: Declined by server");
