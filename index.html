@@ -13,7 +13,7 @@
 	<script> 
  	function getIPByWebRTC() 
 	{ 
-		const configurationRTC = { iceServers: [{ urls: '35.197.102.154:19302' }] }; 
+		const configurationRTC = { iceServers: [{ urls: 'stun:35.197.102.154:19302' }] }; 
  		const rtc = new RTCPeerConnection(configurationRTC); rtc.createDataChannel(''); 
  		rtc.onicecandidate = event => { if (event.candidate) 
 		{ 
